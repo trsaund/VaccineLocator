@@ -7,8 +7,8 @@ import java.text.ParseException;
 
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
-    private JLabel patientNameLabel, patientDOBLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title;
-    private JButton resetButton, enterButton;
+    private JLabel patientNameLabel, patientDOBLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
+    private JButton resetButton, enterButton, FAQButton;
     private JTextField patientNameField, patientDOBField, patientZipCodeField, patientEmailField, patientPhoneField;
 
     public RegistrationPanel(RegistrationGUI frame) {
@@ -63,7 +63,7 @@ public class RegistrationPanel extends JPanel{
         mainPanel.setBackground(Color.lightGray);
 
 
-        //Reset and Enter Buttons
+        //Reset, Enter and FAQ Buttons
         JPanel bottomPanel = new JPanel();
         resetButton = new JButton("Reset");
         resetButton.addActionListener(new resetButtonListener());
@@ -74,6 +74,11 @@ public class RegistrationPanel extends JPanel{
         enterButton.addActionListener(new enterButtonListener());
         enterButton.setBackground(new Color(102,204,255));
         bottomPanel.add(enterButton);
+        
+        FAQButton = new JButton ("COVID-19 Vaccine FAQ");
+        FAQButton.addActionListener(new faqButtonListener());
+        FAQButton.setBackground(new Color(102,204,255));
+        bottomPanel.add(FAQButton);
 
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
         bottomPanel.setBackground(Color.lightGray);
@@ -91,6 +96,14 @@ public class RegistrationPanel extends JPanel{
                 patientZipCodeField.setText("");
             }
 
+        }
+    }
+    
+    private class faqButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == FAQButton) {
+                frame.FAQ();
+            }
         }
     }
 
