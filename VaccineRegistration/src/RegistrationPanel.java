@@ -70,15 +70,15 @@ public class RegistrationPanel extends JPanel{
         resetButton.setBackground(new Color(102,204,255));
         bottomPanel.add(resetButton);
 
-        enterButton = new JButton("Next Step");
-        enterButton.addActionListener(new enterButtonListener());
-        enterButton.setBackground(new Color(102,204,255));
-        bottomPanel.add(enterButton);
-        
         FAQButton = new JButton ("COVID-19 Vaccine FAQ");
         FAQButton.addActionListener(new faqButtonListener());
         FAQButton.setBackground(new Color(102,204,255));
         bottomPanel.add(FAQButton);
+
+        enterButton = new JButton("Next Step");
+        enterButton.addActionListener(new enterButtonListener());
+        enterButton.setBackground(new Color(102,204,255));
+        bottomPanel.add(enterButton);
 
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
         bottomPanel.setBackground(Color.lightGray);
