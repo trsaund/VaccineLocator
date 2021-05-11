@@ -123,6 +123,8 @@ public class RegistrationPanel extends JPanel{
                 //Patient patientID = Patient(patientName, patientDOB, patientZipCode,
                 //        patientEmail, patientPhone);
 
+                //frame.apptSelector();
+
             }
 
         }
