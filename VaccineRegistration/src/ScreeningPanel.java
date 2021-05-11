@@ -61,18 +61,13 @@ public class ScreeningPanel extends JPanel {
 
     }
 
-    /*private void goNext(){
-        RegistrationPanel regPanel= new RegistrationPanel();
-        regPanel.setVisible(true);
-    }*/
-
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton & event.getSource() == eligQuestion1_yes & event.getSource() == eligQuestion2_yes) {
                 frame.vaccineSelect();
             }
             else {
-                System.out.println("You are not eligible for the vaccine.");
+                frame.ineligibleMessage();
 
             }
         }
