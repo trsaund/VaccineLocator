@@ -22,4 +22,11 @@ public class RegistrationGUI extends JFrame {
         RegistrationGUI registrationGUI = new RegistrationGUI();
 
     }
+    public void FAQ() {
+        remove(regPanel);
+        JPanel theFAQ = new FAQ();
+        add(theFAQ);
+        setVisible(true);
+        repaint();
+    }
 }
