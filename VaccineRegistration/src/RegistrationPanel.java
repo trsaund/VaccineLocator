@@ -8,7 +8,7 @@ import java.text.ParseException;
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
     private JLabel patientNameLabel, patientDOBLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
-    private JButton resetButton, enterButton, FAQButton;
+    private JButton resetButton, nextButton, FAQButton;
     private JTextField patientNameField, patientDOBField, patientZipCodeField, patientEmailField, patientPhoneField;
 
     public RegistrationPanel(RegistrationGUI frame) {
@@ -75,10 +75,10 @@ public class RegistrationPanel extends JPanel{
         FAQButton.setBackground(new Color(102,204,255));
         bottomPanel.add(FAQButton);
 
-        enterButton = new JButton("Next Step");
-        enterButton.addActionListener(new enterButtonListener());
-        enterButton.setBackground(new Color(102,204,255));
-        bottomPanel.add(enterButton);
+        nextButton = new JButton("Next Step");
+        nextButton.addActionListener(new nextButtonListener());
+        nextButton.setBackground(new Color(102,204,255));
+        bottomPanel.add(nextButton);
 
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
         bottomPanel.setBackground(Color.lightGray);
@@ -107,9 +107,9 @@ public class RegistrationPanel extends JPanel{
         }
     }
 
-    private class enterButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
+    private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == enterButton){
+            if (event.getSource() == nextButton){
                 //parse input from GUI
                 String patientName = patientNameField.getText();
                 String patientZipCode = patientZipCodeField.getText();

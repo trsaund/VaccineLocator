@@ -8,7 +8,7 @@ public class Vaccine {
         return vaccineName;
     }
 
-    public String getNumberOfDoses() {
+    public int getNumberOfDoses() {
         return numberOfDoses;
     }
 

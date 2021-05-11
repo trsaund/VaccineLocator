@@ -69,8 +69,7 @@ public class ScreeningPanel extends JPanel {
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton & event.getSource() == eligQuestion1_yes & event.getSource() == eligQuestion2_yes) {
-                //RegistrationGUI.regPanel.setVisible(true);
-                System.out.println("Next");
+                frame.vaccineSelect();
             }
             else {
                 System.out.println("You are not eligible for the vaccine.");
