@@ -10,19 +10,20 @@ public class ScreeningPanel extends JPanel {
         setOpaque(false);
 
         JPanel questions = new JPanel();
-        JLabel q1 = new JLabel("Have you ever received a dose of COVID-19 vaccine? ");
-        JButton q1_yes = new JButton("yes");
-        JButton q1_no = new JButton("no");
-        questions.add(q1);
-        questions.add(q1_yes);
-        questions.add(q1_no);
-        JLabel q2 = new JLabel("Have you ever had an allergic reaction to another vaccine or an injectable medication?");
-        JButton q2_yes = new JButton("yes");
-        JButton q2_no = new JButton("no");
-        questions.add(q2);
-        questions.add(q2_yes);
-        questions.add(q2_no);
+        JLabel queOne = new JLabel("Are you aged 16 or older? ");
+        JButton queOneYes = new JButton("yes");
+        JButton queOneNo = new JButton("no");
+        questions.add(queOne);
+        questions.add(queOneYes);
+        questions.add(queOneNo);
+        JLabel queTwo = new JLabel("Have you ever had an allergic reaction to another vaccine or an injectable medication?");
+        JButton queTwoYes = new JButton("yes");
+        JButton queTwoNo = new JButton("no");
+        questions.add(queTwo);
+        questions.add(queTwoYes);
+        questions.add(queTwoNo);
         add(questions, BorderLayout.CENTER);
+        //checking to see if I can make a commit adding a random comment
 
     }
 }

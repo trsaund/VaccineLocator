@@ -109,6 +109,7 @@ public class RegistrationPanel extends JPanel{
                 //creates new Patient instance using input
                 //Patient patientID = Patient(patientName, patientDOB, patientZipCode,
                 //        patientEmail, patientPhone);
+
             }
 
         }
