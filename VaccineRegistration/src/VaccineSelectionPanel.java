@@ -55,11 +55,7 @@ public class VaccineSelectionPanel extends JPanel{
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton) {
-                System.out.println("Next");
-            }
-            else {
-                System.out.println("You are not eligible for the vaccine.");
-
+                frame.registration();
             }
         }
     }

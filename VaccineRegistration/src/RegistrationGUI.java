@@ -5,6 +5,7 @@ public class RegistrationGUI extends JFrame {
     private ScreeningPanel screeningPanel;
     private VaccineSelectionPanel vaccSelectPanel;
     private IneligiblePanel ineligiblePanel;
+    private ApptCardPanel apptCardPanel;
 
     public RegistrationGUI() {
         super("COVID-19 Vaccine Registration");
@@ -35,6 +36,14 @@ public class RegistrationGUI extends JFrame {
         remove(vaccSelectPanel);
         regPanel = new RegistrationPanel(this);
         add(regPanel);
+        setVisible(true);
+        repaint();
+    }
+
+    public void apptCard(){
+        remove(regPanel);
+        apptCardPanel = new ApptCardPanel(this);
+        add(apptCardPanel);
         setVisible(true);
         repaint();
     }
