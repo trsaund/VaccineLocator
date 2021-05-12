@@ -113,14 +113,15 @@ public class RegistrationPanel extends JPanel{
             if (event.getSource() == nextButton){
                 //parse input from GUI
                 String patientName = patientNameField.getText();
-                String patientZipCode = patientZipCodeField.getText();
+                double patientZipCode = Double.parseDouble(patientZipCodeField.getText());
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
                 SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
                 Date patientDOB = null;
                 try {
                     patientDOB = formatter.parse(patientDOBField.getText());
-                } catch (ParseException e) {
+                }
+                catch (ParseException e) {
                     e.printStackTrace();
                 }
 
