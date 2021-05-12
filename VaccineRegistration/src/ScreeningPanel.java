@@ -30,6 +30,7 @@ public class ScreeningPanel extends JPanel {
         eligQuestion1 = new JLabel("Are you aged 16 or older?");
         eligQuestion1_yes = new JRadioButton("Yes");
         eligQuestion1_no = new JRadioButton("No");
+        eligQuestion1_no.addActionListener(new ScreeningPanel.optionButtonListener());
         question1.add(eligQuestion1);
         question1.add(eligQuestion1_yes);
         question1.add(eligQuestion1_no);
@@ -42,6 +43,7 @@ public class ScreeningPanel extends JPanel {
         eligQuestion2 = new JLabel("If you have recently tested positive for COVID-19, Has it been at least 2 weeks since symptoms?");
         eligQuestion2_yes = new JRadioButton("Yes");
         eligQuestion2_no = new JRadioButton("No");
+        eligQuestion2_no.addActionListener(new ScreeningPanel.optionButtonListener());
         eligQuestion2_na = new JRadioButton("Not applicable");
         question2.add(eligQuestion2);
         question2.add(eligQuestion2_yes);
@@ -58,6 +60,7 @@ public class ScreeningPanel extends JPanel {
         question3.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         eligQuestion3 = new JLabel("Have you ever had a serious allergic reaction to polyethylene glycol (PEG)?");
         eligQuestion3_yes = new JRadioButton("Yes");
+        eligQuestion3_yes.addActionListener(new ScreeningPanel.optionButtonListener());
         eligQuestion3_no = new JRadioButton("No");
         question3.add(eligQuestion3);
         question3.add(eligQuestion3_yes);
@@ -69,7 +72,9 @@ public class ScreeningPanel extends JPanel {
         question4.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         eligQuestion4 = new JLabel("Have you ever had a serious allergic reaction to polysorbate?");
         eligQuestion4_yes = new JRadioButton("Yes");
+        eligQuestion4_yes.addActionListener(new ScreeningPanel.optionButtonListener());
         eligQuestion4_no = new JRadioButton("No");
+        eligQuestion4_no.addActionListener(new ScreeningPanel.optionButtonListener());
         question4.add(eligQuestion4);
         question4.add(eligQuestion4_yes);
         question4.add(eligQuestion4_no);
@@ -80,25 +85,33 @@ public class ScreeningPanel extends JPanel {
         add(questions, BorderLayout.CENTER);
 
         //Enter Button
-        JPanel bottomPanel = new JPanel();
+        /*JPanel bottomPanel = new JPanel();
         nextButton = new JButton("Next Step");
         nextButton.addActionListener(new ScreeningPanel.nextButtonListener());
         nextButton.setBackground(new Color(102,204,255));
         bottomPanel.add(nextButton);
 
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
-        add(bottomPanel, BorderLayout.SOUTH);
+        add(bottomPanel, BorderLayout.SOUTH);*/
 
     }
 
-    private class nextButtonListener implements ActionListener {
+    private class optionButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == nextButton & event.getSource() == eligQuestion1_yes & event.getSource() == eligQuestion2_yes) {
-                frame.vaccineSelect();
-            }
-            else {
+            if (event.getSource() == eligQuestion1_no){
                 frame.ineligibleMessage();
-
+            }
+            if (event.getSource() == eligQuestion2_no){
+                frame.ineligibleMessage();
+            }
+            if(event.getSource() == eligQuestion3_yes){
+                frame.allergyWarning();
+            }
+            if(event.getSource() == eligQuestion4_yes){
+                frame.allergyWarning();
+            }
+            if(event.getSource() == eligQuestion4_no){
+                frame.vaccineSelect();
             }
         }
     }

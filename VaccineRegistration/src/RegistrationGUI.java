@@ -5,6 +5,7 @@ public class RegistrationGUI extends JFrame {
     private ScreeningPanel screeningPanel;
     private VaccineSelectionPanel vaccSelectPanel;
     private IneligiblePanel ineligiblePanel;
+    private AllergyWarningPanel allergyWarning;
     private ApptCardPanel apptCardPanel;
 
     public RegistrationGUI() {
@@ -14,6 +15,10 @@ public class RegistrationGUI extends JFrame {
         add(screeningPanel);
         pack();
         setVisible(true);
+    }
+    public void removeAllergyWarning(){
+        remove(allergyWarning);
+        vaccineSelect();
     }
 
     public void vaccineSelect(){
@@ -29,6 +34,15 @@ public class RegistrationGUI extends JFrame {
         remove(screeningPanel);
         ineligiblePanel = new IneligiblePanel(this);
         add(ineligiblePanel);
+        pack();
+        setVisible(true);
+        repaint();
+    }
+
+    public void allergyWarning(){
+        remove(screeningPanel);
+        allergyWarning = new AllergyWarningPanel(this);
+        add(allergyWarning);
         pack();
         setVisible(true);
         repaint();
