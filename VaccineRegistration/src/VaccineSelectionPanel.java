@@ -44,7 +44,7 @@ public class VaccineSelectionPanel extends JPanel{
         //Next Button
         JPanel bottomPanel = new JPanel();
         nextButton = new JButton("Next Step");
-        //enterButton.addActionListener(new VaccineSelectionPanel.enterButtonListener());
+        nextButton.addActionListener(new VaccineSelectionPanel.nextButtonListener());
         nextButton.setBackground(new Color(102,204,255));
         bottomPanel.add(nextButton);
 
