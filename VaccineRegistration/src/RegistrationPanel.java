@@ -10,6 +10,7 @@ public class RegistrationPanel extends JPanel{
     private JLabel patientNameLabel, patientDOBLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
     private JButton resetButton, nextButton, FAQButton;
     private JTextField patientNameField, patientDOBField, patientZipCodeField, patientEmailField, patientPhoneField;
+    private int patientID;
 
     public RegistrationPanel(RegistrationGUI frame) {
         setFocusable(true);
@@ -116,13 +117,20 @@ public class RegistrationPanel extends JPanel{
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
                 SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-                //Date patientDOB = formatter.parse(patientDOBField.getText());
-                Double patientID = Math.random();
+                Date patientDOB = null;
+                try {
+                    patientDOB = formatter.parse(patientDOBField.getText());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
                 //creates new Patient instance using input
-                //Patient patientID = Patient(patientName, patientDOB, patientZipCode,
-                //        patientEmail, patientPhone);
+                String newpatient = "patient" + patientID;
+                new Patient(patientName, patientDOB, patientZipCode, patientEmail, patientPhone);
 
+
+
+                patientID += 1; // after patient file is created, increase patient counter for next input
                 frame.apptSelector();
 
             }
