@@ -28,6 +28,41 @@ public class VaccineSite {
 
     }
 
+    public String getName() {
+        return siteName;
+    }
+
+    public String getSiteAddress() {
+        String fullSiteAddress = siteAddress + ", " + siteCity + ", " + siteState + " " + siteZipCode;
+        return fullSiteAddress;
+    }
+
+    public int getModernaQuantity() {
+        return modernaCount;
+    }
+
+    public int getPfizerCount() {
+        return pfizerCount;
+    }
+
+    public int getJandjCount() {
+        return jandjCount;
+    }
+
+    //For all set methods: if negative number is entered, 0 will be stored
+    public void setModernaQuantity(int newCount) {
+        modernaCount = Math.max(newCount, 0);
+    }
+
+    public void setPfizerCount(int newCount) {
+        pfizerCount = Math.max(newCount, 0);
+    }
+
+    public void setJandjCount(int newCount) {
+        jandjCount = Math.max(newCount, 0);
+    }
+
+
 
 
 
