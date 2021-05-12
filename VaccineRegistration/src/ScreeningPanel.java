@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 
 public class ScreeningPanel extends JPanel {
     private RegistrationGUI frame;
-    private JLabel eligQuestion1, eligQuestion2, title;
-    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no;
+    private JLabel eligQuestion1, eligQuestion2, eligQuestion3, eligQuestion4, title;
+    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no, eligQuestion2_na, eligQuestion3_yes, eligQuestion3_no, eligQuestion4_yes, eligQuestion4_no;
     private JButton nextButton;
 
     public ScreeningPanel(RegistrationGUI frame) {
@@ -27,26 +27,56 @@ public class ScreeningPanel extends JPanel {
         questions.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
         JPanel question1 = new JPanel();
         question1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-        eligQuestion1 = new JLabel("Have you ever received a dose of COVID-19 vaccine?");
+        eligQuestion1 = new JLabel("Are you aged 16 or older?");
         eligQuestion1_yes = new JRadioButton("Yes");
         eligQuestion1_no = new JRadioButton("No");
         question1.add(eligQuestion1);
         question1.add(eligQuestion1_yes);
         question1.add(eligQuestion1_no);
-        add(question1, BorderLayout.CENTER);
+        questions.add(question1, BorderLayout.NORTH);
+
 
         //Question 2
         JPanel question2 = new JPanel();
         question2.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-        eligQuestion2 = new JLabel("Have you ever had an allergic reaction to another vaccine or an injectable medication?");
+        eligQuestion2 = new JLabel("If you have recently tested positive for COVID-19, Has it been at least 2 weeks since symptoms?");
         eligQuestion2_yes = new JRadioButton("Yes");
         eligQuestion2_no = new JRadioButton("No");
+        eligQuestion2_na = new JRadioButton("Not applicable");
         question2.add(eligQuestion2);
         question2.add(eligQuestion2_yes);
         question2.add(eligQuestion2_no);
+        question2.add(eligQuestion2_na);
+        questions.add(question2, BorderLayout.CENTER);
 
-        questions.add(question1, BorderLayout.NORTH);
-        questions.add(question2, BorderLayout.SOUTH);
+        //Questions 3 and  4
+        JPanel finalTwoQuestions = new JPanel();
+        finalTwoQuestions.setLayout(new BorderLayout());
+        finalTwoQuestions.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+
+        JPanel question3 = new JPanel();
+        question3.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        eligQuestion3 = new JLabel("Have you ever had a serious allergic reaction to polyethylene glycol (PEG)?");
+        eligQuestion3_yes = new JRadioButton("Yes");
+        eligQuestion3_no = new JRadioButton("No");
+        question3.add(eligQuestion3);
+        question3.add(eligQuestion3_yes);
+        question3.add(eligQuestion3_no);
+        finalTwoQuestions.add(question3, BorderLayout.NORTH);
+
+
+        JPanel question4 = new JPanel();
+        question4.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        eligQuestion4 = new JLabel("Have you ever had a serious allergic reaction to polysorbate?");
+        eligQuestion4_yes = new JRadioButton("Yes");
+        eligQuestion4_no = new JRadioButton("No");
+        question4.add(eligQuestion4);
+        question4.add(eligQuestion4_yes);
+        question4.add(eligQuestion4_no);
+        finalTwoQuestions.add(question4, BorderLayout.CENTER);
+
+        questions.add(finalTwoQuestions, BorderLayout.SOUTH);
+
         add(questions, BorderLayout.CENTER);
 
         //Enter Button
