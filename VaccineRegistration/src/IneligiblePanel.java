@@ -11,12 +11,11 @@ public class IneligiblePanel extends JPanel {
     public IneligiblePanel(RegistrationGUI frame) {
         setFocusable(true);
         this.frame = frame;
-        setSize(1000, 1000);
         setLayout(new BorderLayout());
         ineligibleMessage = new JLabel("Based on your answer to the eligibility " +
                 "questionaire, you are ineligible for the COVID-19 vaccine.", SwingConstants.CENTER);
-        ineligibleMessage.setFont(new Font("Sans Serif", Font.BOLD, 20));
-        ineligibleMessage.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+        ineligibleMessage.setFont(new Font("Sans Serif", Font.BOLD, 15));
+        ineligibleMessage.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         add(ineligibleMessage, BorderLayout.CENTER);
         setOpaque(false);
 

@@ -13,7 +13,6 @@ public class ScreeningPanel extends JPanel {
     public ScreeningPanel(RegistrationGUI frame) {
         setFocusable(true);
         this.frame = frame;
-        setSize(1000,1000);
         setLayout(new BorderLayout());
         title = new JLabel("Eligibility Screening", SwingConstants.CENTER);
         title.setFont(new Font ("Sans Serif", Font.BOLD, 30));
@@ -24,7 +23,7 @@ public class ScreeningPanel extends JPanel {
         //Question 1
         JPanel questions = new JPanel();
         questions.setLayout(new BorderLayout());
-        questions.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
+        questions.setBorder(BorderFactory.createEmptyBorder(80,50,10,50));
         JPanel question1 = new JPanel();
         question1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         eligQuestion1 = new JLabel("Are you aged 16 or older?");
@@ -54,7 +53,7 @@ public class ScreeningPanel extends JPanel {
         //Questions 3 and  4
         JPanel finalTwoQuestions = new JPanel();
         finalTwoQuestions.setLayout(new BorderLayout());
-        finalTwoQuestions.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        finalTwoQuestions.setBorder(BorderFactory.createEmptyBorder(0,10,10,10));
 
         JPanel question3 = new JPanel();
         question3.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));

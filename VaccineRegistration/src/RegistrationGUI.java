@@ -16,6 +16,7 @@ public class RegistrationGUI extends JFrame {
         add(screeningPanel);
         pack();
         setVisible(true);
+        setSize(900,600);
     }
 
     public void removeAllergyWarning(){
@@ -29,6 +30,7 @@ public class RegistrationGUI extends JFrame {
         add(vaccSelectPanel);
         pack();
         setVisible(true);
+        setSize(500,500);
         repaint();
     }
 
@@ -38,6 +40,7 @@ public class RegistrationGUI extends JFrame {
         add(ineligiblePanel);
         pack();
         setVisible(true);
+        setSize(900,200);
         repaint();
     }
 
@@ -47,6 +50,7 @@ public class RegistrationGUI extends JFrame {
         add(allergyWarning);
         pack();
         setVisible(true);
+        setSize(800,800);
         repaint();
     }
 
@@ -56,6 +60,7 @@ public class RegistrationGUI extends JFrame {
         add(regPanel);
         pack();
         setVisible(true);
+        setSize(800,800);
         repaint();
     }
 
@@ -65,6 +70,7 @@ public class RegistrationGUI extends JFrame {
         add(apptSelection);
         pack();
         setVisible(true);
+        setSize(800,800);
         repaint();
 
     }
@@ -74,6 +80,7 @@ public class RegistrationGUI extends JFrame {
         add(apptCardPanel);
         pack();
         setVisible(true);
+        setSize(900,500);
         repaint();
     }
 
@@ -83,6 +90,7 @@ public class RegistrationGUI extends JFrame {
         add(theFAQ);
         pack();
         setVisible(true);
+        setSize(900,200);
         repaint();
     }
 
