@@ -84,15 +84,6 @@ public class ScreeningPanel extends JPanel {
 
         add(questions, BorderLayout.CENTER);
 
-        //Enter Button
-        /*JPanel bottomPanel = new JPanel();
-        nextButton = new JButton("Next Step");
-        nextButton.addActionListener(new ScreeningPanel.nextButtonListener());
-        nextButton.setBackground(new Color(102,204,255));
-        bottomPanel.add(nextButton);
-
-        bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
-        add(bottomPanel, BorderLayout.SOUTH);*/
 
     }
 
