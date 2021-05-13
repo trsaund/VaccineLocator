@@ -18,8 +18,8 @@ public class RegistrationGUI extends JFrame {
     public RegistrationGUI() {
         super("COVID-19 Vaccine Registration");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        regPanel = new RegistrationPanel(this);
-        add(regPanel);
+        screeningPanel = new ScreeningPanel(this);
+        add(screeningPanel);
         pack();
         setVisible(true);
         setSize(900,600);

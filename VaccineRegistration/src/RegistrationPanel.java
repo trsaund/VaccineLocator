@@ -14,6 +14,7 @@ public class RegistrationPanel extends JPanel{
     private JTextField patientFirstNameField, patientLastNameField, patientZipCodeField, patientEmailField,
             patientPhoneField;
     private int patientID;
+    private Patient currentPatient;
 
     public RegistrationPanel(RegistrationGUI frame) {
         setFocusable(true);
@@ -104,6 +105,10 @@ public class RegistrationPanel extends JPanel{
 
     }
 
+    private Patient getCurrentPatient() {
+        return currentPatient;
+    }
+
     private class resetButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == resetButton){
@@ -136,13 +141,29 @@ public class RegistrationPanel extends JPanel{
                 String patientPhone = patientPhoneField.getText();
 
                 //creates new Patient instance using input
-                Patient newPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
+                Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
                 frame.screening();
 
             }
+            if (event.getSource() == jandjButton) {
+                currentPatient.setVaccinePref("Johnson & Johnson");
+            }
+            else if (event.getSource() == modernaButton) {
+                currentPatient.setVaccinePref("Moderna");
+            }
+            else if (event.getSource() == pfizerButton) {
+                currentPatient.setVaccinePref("Pfizer");
+            }
+            //default setting for vaccine preference is already no preference, so do not need listener for this option
 
         }
     }
+
+     /*private class jandjButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+
+        }
+    }*/
 
 }
 

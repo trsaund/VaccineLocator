@@ -94,7 +94,7 @@ public class ScreeningPanel extends JPanel {
                 frame.allergyWarning();
             }
             if(event.getSource() == eligQuestion4_no){
-                frame.vaccineSelect();
+                frame.registration();
             }
         }
     }
