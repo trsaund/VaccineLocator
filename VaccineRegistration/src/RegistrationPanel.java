@@ -113,7 +113,7 @@ public class RegistrationPanel extends JPanel{
                 String patientPhone = patientPhoneField.getText();
 
                 //creates new Patient instance using input
-                Patient newPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
+                //Patient newPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
                 frame.screening();
 
             }
