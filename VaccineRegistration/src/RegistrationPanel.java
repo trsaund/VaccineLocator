@@ -1,10 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.text.ParseException;
-import java.util.Locale;
 
 
 public class RegistrationPanel extends JPanel{
@@ -154,15 +150,15 @@ public class RegistrationPanel extends JPanel{
 
     }
 
-    private boolean validPhone(String phone) {
+    /*private boolean validPhone(String phone) {
         //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
-        if(phone.matches("[0-9]+") && phone.length() == 10) {
+        if(phone.matches("[0-9]+") && phone.length() == 10){
             return true;
         }
         else {
             return false;
         }
-    }
+    }*/
 
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
@@ -178,9 +174,9 @@ public class RegistrationPanel extends JPanel{
                 if (!validEmail(patientEmailField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Email Address.");
                 }
-                if (!validName(patientPhoneField.getText())) {
+                /*if (!validPhone(patientPhoneField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Phone Number.");
-                }
+                }*/
 
                 //Handling Vaccine Preference Input Errors
                 //Series of if statements, so person can change their mind while on this panel and preference stored will update
@@ -193,10 +189,7 @@ public class RegistrationPanel extends JPanel{
                 if (event.getSource() == pfizerButton) {
                     currentPatient.setVaccinePref("Pfizer");
                 }
-                if (event.getSource() != pfizerButton & event.getSource() != modernaButton &
-                        event.getSource() != jandjButton & event.getSource() != noPreferenceButton) {
-                    JOptionPane.showMessageDialog(null, "Please indicate if you have a vaccine preference.");
-                }
+                //if no vaccine preference is entered, the default value of no preference will be used.
 
                 //If no errors in input, create new instance of patient class for the user.
                 //parse input from GUI
