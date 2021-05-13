@@ -32,7 +32,7 @@ public class VaccineSite {
         return siteName;
     }
 
-    public String getSiteAddress() {
+    public String getFullSiteAddress() {
         String fullSiteAddress = siteAddress + ", " + siteCity + ", " + siteState + " " + siteZipCode;
         return fullSiteAddress;
     }
@@ -65,9 +65,4 @@ public class VaccineSite {
     public void setJandjCount(int newCount) {
         jandjCount = Math.max(newCount, 0);
     }
-
-
-
-
-
 }
