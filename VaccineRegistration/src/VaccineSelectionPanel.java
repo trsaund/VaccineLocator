@@ -54,9 +54,18 @@ public class VaccineSelectionPanel extends JPanel{
 
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == nextButton) {
+            if (event.getSource() == jandjButton) {
+                Patient.setVaccinePref("Johnson & Johnson");
+            }
+            if (event.getSource() == modernaButton) {
+                Patient.setVaccinePref("Moderna");
+            }
+            if (event.getSource() == modernaButton) {
+                Patient.setVaccinePref("Pfizer");
                 frame.apptSelector();
             }
+            else (Patient.setVaccinePref("No Preference"));
+            frame.apptSelector();
         }
     }
 
