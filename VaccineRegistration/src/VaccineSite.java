@@ -8,7 +8,7 @@ public class VaccineSite {
     private String siteAddress;
     private String siteCity;
     private String siteState;
-    private String siteZipCode;
+    private double siteZipCode;
     private int modernaCount;
     private int jandjCount;
     private int pfizerCount;
@@ -19,7 +19,7 @@ public class VaccineSite {
         siteAddress = line.next();
         siteCity = line.next();
         siteState = line.next();
-        siteZipCode = line.next();
+        siteZipCode = line.nextDouble();
         modernaCount = line.nextInt();
         jandjCount = line.nextInt();
         pfizerCount = line.nextInt();
@@ -37,8 +37,8 @@ public class VaccineSite {
         return fullSiteAddress;
     }
 
-    public int getSiteZipCode() {
-        return modernaCount;
+    public double getSiteZipCode() {
+        return siteZipCode;
     }
 
     public int getModernaQuantity() {
