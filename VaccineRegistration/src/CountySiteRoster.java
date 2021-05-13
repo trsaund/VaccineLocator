@@ -32,7 +32,7 @@ public class CountySiteRoster {
         ArrayList nearbySites = new ArrayList<VaccineSite>();
         for (int i = 0; i < vaccineSites.size(); i++) {
             VaccineSite site = vaccineSites.get(i);
-            if (site.getSiteZipCode().equals(zipCode)) {
+            if (site.getSiteZipCode() == zipCode) {
                 nearbySites.add(site);
             }
             
