@@ -37,6 +37,10 @@ public class VaccineSite {
         return fullSiteAddress;
     }
 
+    public int getSiteZipCode() {
+        return modernaCount;
+    }
+
     public int getModernaQuantity() {
         return modernaCount;
     }
