@@ -5,6 +5,7 @@ public class Patient {
     private String patientName, patientEmail, patientPhone;
     private double patientZipCode;
     private Date patientDOB;
+    private String vaccinePref;
     private Date apptDate;
     private Time apptTime;
     private String apptFullAddress;
@@ -22,5 +23,13 @@ public class Patient {
         this.apptDate = apptDate;
         this.apptTime = apptTime;
         this.apptFullAddress = apptFullAddress;
+    }
+
+    public void setVaccinePref(String vaccinePref) {
+        this.vaccinePref = vaccinePref;
+        if (!vaccinePref.equalsIgnoreCase("moderna") & !vaccinePref.equalsIgnoreCase("pfizer")
+                & !vaccinePref.equalsIgnoreCase("johnson & johnson")) {
+            vaccinePref = null;
+        }
     }
 }
