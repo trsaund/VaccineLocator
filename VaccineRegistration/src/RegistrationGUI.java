@@ -9,6 +9,8 @@ public class RegistrationGUI extends JFrame {
     private AllergyWarningPanel allergyWarning;
     private ApptSelectionPanel apptSelection;
     private ApptCardPanel apptCardPanel;
+    private NoAvailabilityPanel noAvailAppts;
+
 
     public RegistrationGUI() {
         super("COVID-19 Vaccine Registration");
@@ -105,6 +107,15 @@ public class RegistrationGUI extends JFrame {
         repaint();
     }
 
+    public void noAvailAppt() {
+        noAvailAppts = new NoAvailabilityPanel(this);
+        remove(apptSelection);
+        add(noAvailAppts);
+        pack();
+        setVisible(true);
+        setSize(900,200);
+        repaint();
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
         //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo.txt");
