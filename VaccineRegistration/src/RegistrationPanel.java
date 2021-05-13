@@ -32,12 +32,12 @@ public class RegistrationPanel extends JPanel{
         JPanel mainPanel = new JPanel();
         mainPanel.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
         mainPanel.setLayout(new GridLayout(6,2));
-        JLabel patientFirstNameLabel = new JLabel("First Name: ");
+        JLabel patientFirstNameLabel = new JLabel("First Name (No hyphens): ");
         patientFirstNameField = new JTextField(50);
         mainPanel.add(patientFirstNameLabel);
         mainPanel.add(patientFirstNameField);
 
-        JLabel patientLastNameLabel = new JLabel("Last Name: ");
+        JLabel patientLastNameLabel = new JLabel("Last Name (No hyphens): ");
         patientLastNameField = new JTextField(50);
         mainPanel.add(patientLastNameLabel);
         mainPanel.add(patientLastNameField);
@@ -47,12 +47,12 @@ public class RegistrationPanel extends JPanel{
         mainPanel.add(patientZipCodeLabel);
         mainPanel.add(patientZipCodeField);
 
-        JLabel patientPhoneLabel = new JLabel("Phone Number (XXXXXXXXXX No dashes or parentheses): ");
+        JLabel patientPhoneLabel = new JLabel("Phone Number e.g. 3198717711 (No dashes or parentheses): ");
         patientPhoneField = new JTextField(12);
         mainPanel.add(patientPhoneLabel);
         mainPanel.add(patientPhoneField);
 
-        JLabel patientEmailLabel = new JLabel("Email: ");
+        JLabel patientEmailLabel = new JLabel("Email (Please use .com email address): ");
         patientEmailField = new JTextField(10);
         mainPanel.add(patientEmailLabel);
         mainPanel.add(patientEmailField);
@@ -150,7 +150,7 @@ public class RegistrationPanel extends JPanel{
 
     }
 
-    /*private boolean validPhone(String phone) {
+    private boolean validPhone(String phone) {
         //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
         if(phone.matches("[0-9]+") && phone.length() == 10){
             return true;
@@ -158,7 +158,7 @@ public class RegistrationPanel extends JPanel{
         else {
             return false;
         }
-    }*/
+    }
 
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
@@ -172,11 +172,11 @@ public class RegistrationPanel extends JPanel{
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Last Name.");
                 }
                 if (!validEmail(patientEmailField.getText())) {
-                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Email Address.");
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid .com Email Address.");
                 }
-                /*if (!validPhone(patientPhoneField.getText())) {
+                if (!validPhone(patientPhoneField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Phone Number.");
-                }*/
+                }
 
                 //Handling Vaccine Preference Input Errors
                 //Series of if statements, so person can change their mind while on this panel and preference stored will update

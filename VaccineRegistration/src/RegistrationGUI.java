@@ -69,7 +69,7 @@ public class RegistrationGUI extends JFrame {
     public void FAQ() {
         JPanel theFAQ = new FAQ();
         update(regPanel, theFAQ);
-        setSize(1500,1000);
+        setSize(600,700);
         repaint();
     }
 
