@@ -52,19 +52,24 @@ public class VaccineSelectionPanel extends JPanel{
         add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    /*private class addPatient(Patient currentPatient) {
+        this.currentPatient = currentPatient;
+
+    }*/
+
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             /*if (event.getSource() == jandjButton) {
-                Patient.setVaccinePref("Johnson & Johnson");
+                currentPatient.setVaccinePref("Johnson & Johnson");
             }
             else if (event.getSource() == modernaButton) {
-                Patient.setVaccinePref("Moderna");
+                currentPatient.setVaccinePref("Moderna");
             }
             else if (event.getSource() == pfizerButton) {
-                Patient.setVaccinePref("Pfizer");
+                currentPatient.setVaccinePref("Pfizer");
             }
             else {
-                Patient.setVaccinePref("No Preference");
+                currentPatient.setVaccinePref("No Preference");
             }*/
 
             frame.apptSelector();

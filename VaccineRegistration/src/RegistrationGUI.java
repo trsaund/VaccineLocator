@@ -30,7 +30,7 @@ public class RegistrationGUI extends JFrame {
 
     public void vaccineSelect(){
         //remove(screeningPanel);
-        vaccSelectPanel = new VaccineSelectionPanel(this);
+        VaccineSelectionPanel vaccSelectPanel = new VaccineSelectionPanel(this);
         //add(vaccSelectPanel);
         //pack();
         //setVisible(true);
