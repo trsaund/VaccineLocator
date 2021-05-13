@@ -23,14 +23,10 @@ public class ApptSelectionPanel extends JPanel{
         topPanel.add(title);
         add(topPanel, BorderLayout.NORTH);
 
-        //Main Panel for Patient Information Input
+        //Main Panel for Appt Selection
         JPanel mainPanel = new JPanel();
         mainPanel.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
         mainPanel.setLayout(new GridLayout(5,2));
-
-
-
-
 
         //Next Buttons
         JPanel bottomPanel = new JPanel();

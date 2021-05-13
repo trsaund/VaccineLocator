@@ -35,7 +35,6 @@ public class CountySiteRoster {
             if (site.getSiteZipCode() == zipCode) {
                 nearbySites.add(site);
             }
-            
         }
         /*if (siteZipCode.equals(ZipCode) {
             nearbySites.add(site);

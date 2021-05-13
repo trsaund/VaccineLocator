@@ -142,7 +142,7 @@ public class RegistrationPanel extends JPanel{
 
                 //creates new Patient instance using input
                 Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
-                frame.screening();
+                frame.apptSelector();
 
             }
             if (event.getSource() == jandjButton) {
