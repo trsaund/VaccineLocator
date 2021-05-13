@@ -1,5 +1,7 @@
 import javax.swing.*;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class RegistrationGUI extends JFrame {
     private RegistrationPanel regPanel;
@@ -91,8 +93,20 @@ public class RegistrationGUI extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty.txt");
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner input = new Scanner(new File(("JohnsonCounty")));
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
+            if (line.equals(""))
+            {
+                break; //moves execution down to next while loop (or whatever next chunk of code is)
+            }
+            Scanner scannerLine = new Scanner(line);
+            VaccineSite site = new VaccineSite(scannerLine);
+            //vaccineSites.add(site);
+            System.out.println("Site Added");
+        }
+        CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty");
         RegistrationGUI registrationGUI = new RegistrationGUI();
         /*for(int i=0; i < johnsonCountySites.vaccineSites.size(); i++){
             System.out.println( johnsonCountySites.vaccineSites.get(i) );
