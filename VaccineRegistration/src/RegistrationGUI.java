@@ -8,8 +8,9 @@ public class RegistrationGUI extends JFrame {
     private IneligiblePanel ineligiblePanel;
     private AllergyWarningPanel allergyWarning;
     private ApptSelectionPanel apptSelection;
-    private ApptCardPanel apptCardPanel;
+    private ApptScheduledPanel apptCardPanel;
     private NoAvailabilityPanel noAvailAppts;
+    private Patient newPatient;
 
 
     public RegistrationGUI() {
@@ -89,7 +90,7 @@ public class RegistrationGUI extends JFrame {
     }
     public void apptCard(){
         remove(regPanel);
-        apptCardPanel = new ApptCardPanel(this);
+        apptCardPanel = new ApptScheduledPanel(this);
         add(apptCardPanel);
         pack();
         setVisible(true);
@@ -117,9 +118,12 @@ public class RegistrationGUI extends JFrame {
         repaint();
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo.txt");
+    public static void main(String[] args) {
+        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
+        /*for(int i=0; i < johnsonCountySites.vaccineSites.size(); i++){
+            System.out.println( johnsonCountySites.vaccineSites.get(i) );
+        }*/
 
     }
 }

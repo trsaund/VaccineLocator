@@ -6,6 +6,7 @@ public class Patient {
     private double patientZipCode;
     private String vaccinePref;
     private String apptFullAddress;
+    private int patientId = 1;
 
 
     public Patient(String patientFirstName, String patientLastName, double patientZipCode, String patientEmail, String patientPhone) {
@@ -14,6 +15,8 @@ public class Patient {
         this.patientZipCode = patientZipCode;
         this.patientEmail = patientEmail;
         this.patientPhone = patientPhone;
+        patientId = patientId;
+        patientId += 1;
     }
 
     public void setupAppt(String apptFullAddress) {
