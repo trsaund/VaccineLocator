@@ -11,13 +11,13 @@ Main-Healthcare-Pharmacy 655-Liberty-Way North-Liberty IA 52317 400 300 100
 Clark-Pharmacy 1946-42nd-St Cedar-Rapids IA 52402 4000 300 100
 River-Crossing-Pharmacy 3056-River-Cross-Ct Riverside IA 52327 1000 300 100
 North-Liberty-Pharmacy 555-W-Cherry-St North-Liberty IA 52317 400 300 100
-Walgreens-#354 625-Pacha-Pkwy-North-Liberty IA 52317 4000 0 100
-NuCara-Pharmacy-#123 1900-James-St-Suite-10-Coralville IA 52241 4000 300 100
-Hometown-Pharmacy 1-S-Washington-St-Oxford IA 52322 4000 300 100
-Towncrest-Pharmacy-#3 300-S-Locust-St-Oxford IA 52322 4000 300 100
-CVS-Pharmacy-#310 5720-College-Corner-Pike-Swisher IA 52338 4000 300 100
-Walgreens-#563 123-W-Spring-St-Solon IA 52333 4000 300 100
-Towncrest-Pharmacy-#5 3254-N-Front-St-Tiffin IA 52340 4000 300 100
+Walgreens-#354 625-Pacha-Pkwy North-Liberty IA 52317 4000 0 100
+NuCara-Pharmacy-#123 1900-James-St-Suite-10 Coralville IA 52241 4000 300 100
+Hometown-Pharmacy 1-S-Washington-St Oxford IA 52322 4000 300 100
+Towncrest-Pharmacy-#3 300-S-Locust-St Oxford IA 52322 4000 300 100
+CVS-Pharmacy-#310 5720-College-Corner Pike-Swisher IA 52338 4000 300 100
+Walgreens-#563 123-W-Spring-St Solon IA 52333 4000 300 100
+Towncrest-Pharmacy-#5 3254-N-Front-St Tiffin IA 52340 4000 300 100
 CVS-Pharmacy-#110 999-Lapeer-Rd Tiffin IA 52340 4000 300 100
 Walgreens-#565 104-E-Euclid-Ave Solon IA 52333 400 20 100
 Lone-Tree-Pharmacy 501-Bramlett-Blvd Lone-Tree IA 52755 4000 300 100
