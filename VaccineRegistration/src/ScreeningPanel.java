@@ -7,7 +7,8 @@ import java.text.SimpleDateFormat;
 public class ScreeningPanel extends JPanel {
     private RegistrationGUI frame;
     private JLabel eligQuestion1, eligQuestion2, eligQuestion3, eligQuestion4, title;
-    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no, eligQuestion2_na, eligQuestion3_yes, eligQuestion3_no, eligQuestion4_yes, eligQuestion4_no;
+    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no,
+            eligQuestion2_na, eligQuestion3_yes, eligQuestion3_no, eligQuestion4_yes, eligQuestion4_no;
     private JButton nextButton;
 
     public ScreeningPanel(RegistrationGUI frame) {
@@ -76,7 +77,26 @@ public class ScreeningPanel extends JPanel {
         questions.add(question4);
         add(questions, BorderLayout.CENTER);
 
+        //Next Button
+        JPanel bottomPanel = new JPanel();
+        nextButton = new JButton("Next Step");
+        nextButton.addActionListener(new ScreeningPanel.nextButtonListener());
+        nextButton.setBackground(new Color(102,204,255));
+        bottomPanel.add(nextButton);
 
+        bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
+        add(bottomPanel, BorderLayout.SOUTH);
+
+    }
+
+    private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == nextButton){
+                frame.registration();
+
+            }
+
+        }
     }
 
     private class optionButtonListener implements ActionListener {
@@ -88,14 +108,16 @@ public class ScreeningPanel extends JPanel {
                 frame.ineligibleMessage();
             }
             if(event.getSource() == eligQuestion3_yes){
-                frame.allergyWarning();
+                JOptionPane.showMessageDialog(null, "If you are allergic to polyethylene glycol " +
+                        "(PEG) it is recommended that you receive the Johnson and Johnson vaccine.");
             }
             if(event.getSource() == eligQuestion4_yes){
-                frame.allergyWarning();
+                JOptionPane.showMessageDialog(null, "If you are allergic to polysorbate it is " +
+                        "recommended that you receive an mRNA vaccine (Pfizer or Moderna).");
             }
-            if(event.getSource() == eligQuestion4_no){
-                frame.registration();
-            }
+            //if(event.getSource() == eligQuestion4_no){
+            //    frame.registration();
+           // }
         }
     }
 }

@@ -49,7 +49,7 @@ public class AllergyWarningPanel extends JPanel {
     private class registrationListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
             if (event.getSource() == proceedButton){
-                frame.removeAllergyWarning();
+                //frame.removeAllergyWarning();
             }
         }
 
