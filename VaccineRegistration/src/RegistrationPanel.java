@@ -44,15 +44,11 @@ public class RegistrationPanel extends JPanel{
         patientZipCodeField = new JTextField(5);
         mainPanel.add(patientZipCodeLabel);
         mainPanel.add(patientZipCodeField);
-        add(mainPanel, BorderLayout.CENTER);
-        mainPanel.setBackground(Color.lightGray);
 
         JLabel patientPhoneLabel = new JLabel("Phone Number (XXX-XXX-XXXX): ");
         patientPhoneField = new JTextField(12);
         mainPanel.add(patientPhoneLabel);
         mainPanel.add(patientPhoneField);
-        add(mainPanel, BorderLayout.CENTER);
-        mainPanel.setBackground(Color.lightGray);
 
         JLabel patientEmailLabel = new JLabel("Email: ");
         patientEmailField = new JTextField(10);
