@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 public class AllergyWarningPanel extends JPanel {
     private RegistrationGUI frame;
     private JLabel allergyWarning, polyglycolAllergy, polysorbateAllergy;
-    private JButton vaccineSelection;
+    private JButton proceedButton;
 
     public AllergyWarningPanel(RegistrationGUI frame){
         setFocusable(true);
@@ -38,17 +38,17 @@ public class AllergyWarningPanel extends JPanel {
         add(warnings, BorderLayout.CENTER);
 
         JPanel vaccineButton = new JPanel();
-        vaccineSelection = new JButton("Click for Vaccine Selection");
-        vaccineSelection.addActionListener(new AllergyWarningPanel.vaccineSelectionListener());
-        vaccineSelection.setBackground(new Color(107, 111, 113));
-        vaccineButton.add(vaccineSelection);
+        proceedButton = new JButton("Proceed to registration");
+        proceedButton.addActionListener(new AllergyWarningPanel.registrationListener());
+        proceedButton.setBackground(new Color(107, 111, 113));
+        vaccineButton.add(proceedButton);
         add(vaccineButton, BorderLayout.SOUTH);
         setOpaque(false);
     }
 
-    private class vaccineSelectionListener implements ActionListener{
+    private class registrationListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
-            if (event.getSource() == vaccineSelection){
+            if (event.getSource() == proceedButton){
                 frame.removeAllergyWarning();
             }
         }

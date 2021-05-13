@@ -27,7 +27,7 @@ public class RegistrationGUI extends JFrame {
 
     public void removeAllergyWarning(){
         remove(allergyWarning);
-        vaccineSelect();
+        registration();
     }
 
     public void vaccineSelect(){
@@ -61,7 +61,7 @@ public class RegistrationGUI extends JFrame {
     public void registration() {
         regPanel = new RegistrationPanel(this);
         update(screeningPanel, regPanel);
-        setSize(1500,500);
+        setSize(1000,600);
         repaint();
     }
 
