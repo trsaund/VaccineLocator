@@ -39,38 +39,38 @@ public class FAQ extends JPanel {
         JLabel freqQues10 = new JLabel("Can I get a COVID-19 vaccine if I currently have COVID-19?", SwingConstants.CENTER);
         freqQues10.setFont(new Font("Sans Serif", Font.PLAIN, fontSize));
 
-        JLabel a1 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
-        JLabel a2 = new JLabel("<html><ul>" + "<li>" + "Pain, redness, swelling in the arm, tiredness, muscle pain, headaches, chills, and a fever" + "</li>" + "</ul></html>");
-        JLabel a3 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
-        JLabel a4 = new JLabel("<html><ul>" + "<li>" + "The CDC is not sure how long protection will last" + "</li>" + "</ul></html>");
-        JLabel a5 = new JLabel("<html><ul>" + "<li>" + "Fully vaccinated people can gather indoors with no masks/social distancing with other fully vaccinated people" + "</li>" + "</ul></html>");
-        JLabel a6 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
-        JLabel a7 = new JLabel("<html><ul>" + "<li>" + "Ingredients vary by maker, please see their websites for details" + "</li>" + "</ul></html>");
-        JLabel a8 = new JLabel("<html><ul>" + "<li>" + "The federal government is providing vaccines free of charge" + "</li>" + "</ul></html>");
-        JLabel a9 = new JLabel("<html><ul>" + "<li>" + "Two Pfizer vaccine doses, two Moderna vaccine doses, One Johnson and Johnson vaccine dose" + "</li>" + "</ul></html>");
-        JLabel a10 = new JLabel("<html><ul>" + "<li>" + "No" + "</li>" + "</ul></html>");
+        JLabel freqAns1 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
+        JLabel freqAns2 = new JLabel("<html><ul>" + "<li>" + "Pain, redness, swelling in the arm, tiredness, muscle pain, headaches, chills, and a fever" + "</li>" + "</ul></html>");
+        JLabel freqAns3 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
+        JLabel freqAns4 = new JLabel("<html><ul>" + "<li>" + "The CDC is not sure how long protection will last" + "</li>" + "</ul></html>");
+        JLabel freqAns5 = new JLabel("<html><ul>" + "<li>" + "Fully vaccinated people can gather indoors with no masks/social distancing with other fully vaccinated people" + "</li>" + "</ul></html>");
+        JLabel freqAns6 = new JLabel("<html><ul>" + "<li>" + "Yes" + "</li>" + "</ul></html>");
+        JLabel freqAns7 = new JLabel("<html><ul>" + "<li>" + "Ingredients vary by maker, please see their websites for details" + "</li>" + "</ul></html>");
+        JLabel freqAns8 = new JLabel("<html><ul>" + "<li>" + "The federal government is providing vaccines free of charge" + "</li>" + "</ul></html>");
+        JLabel freqAns9 = new JLabel("<html><ul>" + "<li>" + "Two Pfizer vaccine doses, two Moderna vaccine doses, One Johnson and Johnson vaccine dose" + "</li>" + "</ul></html>");
+        JLabel freqAns10 = new JLabel("<html><ul>" + "<li>" + "No" + "</li>" + "</ul></html>");
 
         faqpage.setLayout(new BoxLayout(faqpage, BoxLayout.Y_AXIS));
         faqpage.add(freqQues1);
-        faqpage.add(a1);
+        faqpage.add(freqAns1);
         faqpage.add(freqQues2);
-        faqpage.add(a2);
+        faqpage.add(freqAns2);
         faqpage.add(freqQues3);
-        faqpage.add(a3);
+        faqpage.add(freqAns3);
         faqpage.add(freqQues4);
-        faqpage.add(a4);
+        faqpage.add(freqAns4);
         faqpage.add(freqQues5);
-        faqpage.add(a5);
+        faqpage.add(freqAns5);
         faqpage.add(freqQues6);
-        faqpage.add(a6);
+        faqpage.add(freqAns6);
         faqpage.add(freqQues7);
-        faqpage.add(a7);
+        faqpage.add(freqAns7);
         faqpage.add(freqQues8);
-        faqpage.add(a8);
+        faqpage.add(freqAns8);
         faqpage.add(freqQues9);
-        faqpage.add(a9);
+        faqpage.add(freqAns9);
         faqpage.add(freqQues10);
-        faqpage.add(a10);
+        faqpage.add(freqAns10);
         add(faqpage, BorderLayout.CENTER);
     }
 }
