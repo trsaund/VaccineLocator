@@ -45,20 +45,20 @@ public class RegistrationGUI extends JFrame {
     public void allergyWarning(){
         allergyWarning = new AllergyWarningPanel(this);
         update(screeningPanel, allergyWarning);
-        setSize(800,800);
+        setSize(1500,500);
         repaint();
     }
 
     public void screening(){
         screeningPanel = new ScreeningPanel(this);
         update(regPanel, screeningPanel);
-        setSize(800,500);
+        setSize(1500,500);
         repaint();
     }
 
     public void apptSelector(){
         apptSelection = new ApptSelectionPanel(this);
-        update(regPanel, apptSelection);
+        update(vaccSelectPanel, apptSelection);
         setSize(800,800);
         repaint();
 
