@@ -7,9 +7,9 @@ import java.text.ParseException;
 
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
-    private JLabel patientNameLabel, patientDOBLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
+    private JLabel patientNameLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
     private JButton resetButton, nextButton, FAQButton;
-    private JTextField patientNameField, patientDOBField, patientZipCodeField, patientEmailField, patientPhoneField;
+    private JTextField patientFirstNameField, patientLastNameField, patientZipCodeField, patientEmailField, patientPhoneField;
     private int patientID;
 
     public RegistrationPanel(RegistrationGUI frame) {
@@ -30,17 +30,15 @@ public class RegistrationPanel extends JPanel{
         JPanel mainPanel = new JPanel();
         mainPanel.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
         mainPanel.setLayout(new GridLayout(5,2));
-        JLabel patientNameLabel = new JLabel("Name: ");
-        patientNameField = new JTextField(50);
-        mainPanel.add(patientNameLabel);
-        mainPanel.add(patientNameField);
+        JLabel patientFirstNameLabel = new JLabel("First Name: ");
+        patientFirstNameField = new JTextField(50);
+        mainPanel.add(patientFirstNameLabel);
+        mainPanel.add(patientFirstNameField);
 
-        JLabel patientDOBLabel = new JLabel("Date of Birth (MM/DD/YYYY): ");
-        patientDOBField = new JTextField(10);
-        mainPanel.add(patientDOBLabel);
-        mainPanel.add(patientDOBField);
-        add(mainPanel, BorderLayout.CENTER);
-        mainPanel.setBackground(Color.lightGray);
+        JLabel patientLastNameLabel = new JLabel("Last Name: ");
+        patientLastNameField = new JTextField(50);
+        mainPanel.add(patientLastNameLabel);
+        mainPanel.add(patientLastNameField);
 
         JLabel patientZipCodeLabel = new JLabel("Zip Code: ");
         patientZipCodeField = new JTextField(5);
@@ -90,8 +88,8 @@ public class RegistrationPanel extends JPanel{
     private class resetButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == resetButton){
-                patientNameField.setText("");
-                patientDOBField.setText("");
+                patientFirstNameField.setText("");
+                patientLastNameField.setText("");
                 patientEmailField.setText("");
                 patientPhoneField.setText("");
                 patientZipCodeField.setText("");
@@ -112,21 +110,14 @@ public class RegistrationPanel extends JPanel{
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton){
                 //parse input from GUI
-                String patientName = patientNameField.getText();
+                String patientFirstName = patientFirstNameField.getText();
+                String patientLastName = patientLastNameField.getText();
                 double patientZipCode = Double.parseDouble(patientZipCodeField.getText());
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
-                SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-                Date patientDOB = null;
-                try {
-                    patientDOB = formatter.parse(patientDOBField.getText());
-                }
-                catch (ParseException e) {
-                    e.printStackTrace();
-                }
 
                 //creates new Patient instance using input
-                Patient newPatient = new Patient(patientName, patientDOB, patientZipCode, patientEmail, patientPhone);
+                Patient newPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
 
                 patientID += 1; // after patient file is created, increase patient counter for next input
                 frame.apptSelector();
