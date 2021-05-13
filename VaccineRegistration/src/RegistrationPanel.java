@@ -7,9 +7,12 @@ import java.text.ParseException;
 
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
-    private JLabel patientNameLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ;
+    private JLabel patientNameLabel, patientZipCodeLable, patientEmailLabel, patientPhoneLabel, title, FAQ,
+            vaccinePrefQuestion;
     private JButton resetButton, nextButton, FAQButton;
-    private JTextField patientFirstNameField, patientLastNameField, patientZipCodeField, patientEmailField, patientPhoneField;
+    private JRadioButton jandjButton, modernaButton, pfizerButton, noPreferenceButton;
+    private JTextField patientFirstNameField, patientLastNameField, patientZipCodeField, patientEmailField,
+            patientPhoneField;
     private int patientID;
 
     public RegistrationPanel(RegistrationGUI frame) {
@@ -26,10 +29,10 @@ public class RegistrationPanel extends JPanel{
         topPanel.add(title);
         add(topPanel, BorderLayout.NORTH);
 
-        //Main Panel for Patient Information Input
+        //Main Panel for Patient Information Input and Vaccine Preference
         JPanel mainPanel = new JPanel();
         mainPanel.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
-        mainPanel.setLayout(new GridLayout(5,2));
+        mainPanel.setLayout(new GridLayout(6,2));
         JLabel patientFirstNameLabel = new JLabel("First Name: ");
         patientFirstNameField = new JTextField(50);
         mainPanel.add(patientFirstNameLabel);
@@ -54,9 +57,29 @@ public class RegistrationPanel extends JPanel{
         patientEmailField = new JTextField(10);
         mainPanel.add(patientEmailLabel);
         mainPanel.add(patientEmailField);
+
+        vaccinePrefQuestion = new JLabel("Do you have a vaccine preference?");
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        mainPanel.add(vaccinePrefQuestion, BorderLayout.CENTER);
+
+        //Vaccine Options
+        JPanel vaccines = new JPanel();
+        vaccines.setBackground(Color.lightGray);
+        modernaButton = new JRadioButton("Moderna");
+        modernaButton.setBackground(Color.lightGray);
+        pfizerButton = new JRadioButton("Pfizer");
+        pfizerButton.setBackground(Color.lightGray);
+        jandjButton = new JRadioButton("Johnson & Johnson");
+        jandjButton.setBackground(Color.lightGray);
+        noPreferenceButton = new JRadioButton("No Preference");
+        noPreferenceButton.setBackground(Color.lightGray);
+        vaccines.add(modernaButton);
+        vaccines.add(pfizerButton);
+        vaccines.add(jandjButton);
+        vaccines.add(noPreferenceButton);
+        mainPanel.add(vaccines,BorderLayout.SOUTH);
         add(mainPanel, BorderLayout.CENTER);
         mainPanel.setBackground(Color.lightGray);
-
 
         //Reset, Enter and FAQ Buttons
         JPanel bottomPanel = new JPanel();

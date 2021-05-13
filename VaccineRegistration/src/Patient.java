@@ -2,10 +2,9 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Patient {
-    private String patientFirstName, patientLastName, patientEmail, patientPhone;
+    private String patientFirstName, patientLastName, patientEmail, patientPhone, patientVaccPref = "No Preference",
+            apptFullAddress;
     private int patientZipCode, patientId = 1;
-    private String vaccinePref;
-    private String apptFullAddress;
 
     public Patient(String patientFirstName, String patientLastName, int patientZipCode, String patientEmail, String patientPhone) {
         this.patientFirstName = patientFirstName;
@@ -22,7 +21,7 @@ public class Patient {
     }
 
     public void setVaccinePref(String vaccinePref) {
-        this.vaccinePref = vaccinePref;
+        this.patientVaccPref = vaccinePref;
         if (!vaccinePref.equalsIgnoreCase("moderna") & !vaccinePref.equalsIgnoreCase("pfizer")
                 & !vaccinePref.equalsIgnoreCase("johnson & johnson")) {
             vaccinePref = null;

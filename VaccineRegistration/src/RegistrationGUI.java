@@ -58,6 +58,13 @@ public class RegistrationGUI extends JFrame {
         repaint();
     }
 
+    public void registration() {
+        regPanel = new RegistrationPanel(this);
+        update(screeningPanel, regPanel);
+        setSize(1500,500);
+        repaint();
+    }
+
     public void apptSelector(){
         apptSelection = new ApptSelectionPanel(this);
         update(vaccSelectPanel, apptSelection);
