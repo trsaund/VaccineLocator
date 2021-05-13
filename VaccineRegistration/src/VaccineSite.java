@@ -19,10 +19,10 @@ public class VaccineSite {
         siteAddress = line.next();
         siteCity = line.next();
         siteState = line.next();
-        siteZipCode = line.nextDouble();
-        modernaCount = line.nextInt();
-        jandjCount = line.nextInt();
-        pfizerCount = line.nextInt();
+        //siteZipCode = line.nextDouble();
+        //modernaCount = line.nextInt();
+        //jandjCount = line.nextInt();
+       // pfizerCount = line.nextInt();
         /*This code will throw an error if text file with Site Info is formatted wrong, but we assume a file
         with any additional site info will be formatted correctly and input by programmers on the backend. */
 
