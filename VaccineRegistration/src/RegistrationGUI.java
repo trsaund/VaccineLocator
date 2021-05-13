@@ -118,7 +118,7 @@ public class RegistrationGUI extends JFrame {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo.txt");
+        CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
 
     }
