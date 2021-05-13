@@ -154,17 +154,32 @@ public class RegistrationPanel extends JPanel{
 
     }
 
+    private boolean validPhone(String phone) {
+        //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
+        if(phone.matches("[0-9]+") && phone.length() == 10) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton) {
-                if (!validEmail(patientEmailField.getText())) {
-                    int option = JOptionPane.showConfirmDialog(null, "Please Enter a Valid Email Address.");
-                }
+
+                //Handling Invalid Registration Information
                 if (!validName(patientFirstNameField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid First Name.");
                 }
                 if (!validName(patientFirstNameField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Last Name.");
+                }
+                if (!validEmail(patientEmailField.getText())) {
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Email Address.");
+                }
+                if (!validName(patientPhoneField.getText())) {
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Phone Number.");
                 }
 
                 //Handling Vaccine Preference Input Errors
@@ -178,9 +193,12 @@ public class RegistrationPanel extends JPanel{
                 if (event.getSource() == pfizerButton) {
                     currentPatient.setVaccinePref("Pfizer");
                 }
+                if (event.getSource() != pfizerButton & event.getSource() != modernaButton &
+                        event.getSource() != jandjButton & event.getSource() != noPreferenceButton) {
+                    JOptionPane.showMessageDialog(null, "Please indicate if you have a vaccine preference.");
+                }
 
                 //If no errors in input, create new instance of patient class for the user.
-
                 //parse input from GUI
                 String patientFirstName = patientFirstNameField.getText();
                 String patientLastName = patientLastNameField.getText();
@@ -196,17 +214,10 @@ public class RegistrationPanel extends JPanel{
                 frame.apptSelector();
 
 
-
-
             }
 
         }
     }
-
-     /*private class jandjButtonListener implements ActionListener {
-        public void actionPerformed(ActionEvent event) {
-        }
-    }*/
 
 }
 
