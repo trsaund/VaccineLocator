@@ -22,7 +22,7 @@ public class ScreeningPanel extends JPanel {
 
         //Question 1
         JPanel questions = new JPanel();
-        questions.setLayout(new BorderLayout());
+        questions.setLayout(new BoxLayout(questions, BoxLayout.Y_AXIS));
         questions.setBorder(BorderFactory.createEmptyBorder(80,50,10,50));
         JPanel question1 = new JPanel();
         question1.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -43,18 +43,14 @@ public class ScreeningPanel extends JPanel {
         eligQuestion2_yes = new JRadioButton("Yes");
         eligQuestion2_no = new JRadioButton("No");
         eligQuestion2_no.addActionListener(new ScreeningPanel.optionButtonListener());
-        eligQuestion2_na = new JRadioButton("Not applicable");
+        eligQuestion2_na = new JRadioButton("N/A");
         question2.add(eligQuestion2);
         question2.add(eligQuestion2_yes);
         question2.add(eligQuestion2_no);
         question2.add(eligQuestion2_na);
-        questions.add(question2, BorderLayout.CENTER);
+        questions.add(question2);
 
-        //Questions 3 and  4
-        JPanel finalTwoQuestions = new JPanel();
-        finalTwoQuestions.setLayout(new BorderLayout());
-        finalTwoQuestions.setBorder(BorderFactory.createEmptyBorder(0,10,10,10));
-
+        //Questions 3
         JPanel question3 = new JPanel();
         question3.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         eligQuestion3 = new JLabel("Have you ever had a serious allergic reaction to polyethylene glycol (PEG)?");
@@ -64,9 +60,9 @@ public class ScreeningPanel extends JPanel {
         question3.add(eligQuestion3);
         question3.add(eligQuestion3_yes);
         question3.add(eligQuestion3_no);
-        finalTwoQuestions.add(question3, BorderLayout.NORTH);
+        questions.add(question3);
 
-
+        //Question 4
         JPanel question4 = new JPanel();
         question4.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         eligQuestion4 = new JLabel("Have you ever had a serious allergic reaction to polysorbate?");
@@ -77,10 +73,7 @@ public class ScreeningPanel extends JPanel {
         question4.add(eligQuestion4);
         question4.add(eligQuestion4_yes);
         question4.add(eligQuestion4_no);
-        finalTwoQuestions.add(question4, BorderLayout.CENTER);
-
-        questions.add(finalTwoQuestions, BorderLayout.SOUTH);
-
+        questions.add(question4);
         add(questions, BorderLayout.CENTER);
 
 

@@ -61,7 +61,7 @@ public class RegistrationGUI extends JFrame {
         add(regPanel);
         pack();
         setVisible(true);
-        setSize(800,800);
+        setSize(800,500);
         repaint();
     }
 
@@ -97,7 +97,7 @@ public class RegistrationGUI extends JFrame {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo");
+        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCoSiteInfo.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
 
     }

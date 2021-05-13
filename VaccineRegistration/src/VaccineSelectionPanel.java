@@ -24,8 +24,8 @@ public class VaccineSelectionPanel extends JPanel{
         //Preference Question
         JPanel vaccineChoice = new JPanel();
         vaccineChoice.setLayout(new BorderLayout());
-        vaccinePrefQuestion = new JLabel("Do you have a vaccine preference?");
-        vaccineChoice.setBorder(BorderFactory.createEmptyBorder(60,60,60,60));
+        vaccinePrefQuestion = new JLabel("Do you have a vaccine preference?", SwingConstants.CENTER);
+        vaccineChoice.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         vaccineChoice.add(vaccinePrefQuestion, BorderLayout.CENTER);
 
         //Vaccine Options
@@ -48,7 +48,7 @@ public class VaccineSelectionPanel extends JPanel{
         nextButton.setBackground(new Color(102,204,255));
         bottomPanel.add(nextButton);
 
-        bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
+        bottomPanel.setBorder(BorderFactory.createEmptyBorder(20,0,50,0));
         add(bottomPanel, BorderLayout.SOUTH);
     }
 
