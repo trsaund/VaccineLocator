@@ -161,7 +161,6 @@ public class RegistrationPanel extends JPanel{
 
      /*private class jandjButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-
         }
     }*/
 
