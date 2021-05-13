@@ -8,7 +8,6 @@ public class CountySiteRoster {
 
     public CountySiteRoster(String fileName) throws FileNotFoundException {
         vaccineSites = new ArrayList<VaccineSite>();
-
         Scanner input = new Scanner(new File(fileName));
         loadSite(input);
     }
