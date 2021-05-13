@@ -45,7 +45,7 @@ public class ApptSelectionPanel extends JPanel{
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton){
-                frame.apptCard();
+                frame.apptScheduled();
 
             }
 
