@@ -129,7 +129,7 @@ public class RegistrationPanel extends JPanel{
                 Patient newPatient = new Patient(patientName, patientDOB, patientZipCode, patientEmail, patientPhone);
 
                 patientID += 1; // after patient file is created, increase patient counter for next input
-                frame.apptSelector();
+                frame.screening();
 
             }
 

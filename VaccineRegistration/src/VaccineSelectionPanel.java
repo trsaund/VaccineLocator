@@ -55,7 +55,7 @@ public class VaccineSelectionPanel extends JPanel{
     private class nextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton) {
-                frame.registration();
+                frame.apptSelector();
             }
         }
     }

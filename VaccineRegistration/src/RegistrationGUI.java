@@ -58,7 +58,7 @@ public class RegistrationGUI extends JFrame {
     }
 
     public void screening(){
-        remove(vaccSelectPanel);
+        remove(regPanel);
         screeningPanel = new ScreeningPanel(this);
         add(screeningPanel);
         pack();
@@ -78,7 +78,7 @@ public class RegistrationGUI extends JFrame {
     }
 
     public void apptSelector(){
-        remove(regPanel);
+        remove(vaccSelectPanel);
         apptSelection = new ApptSelectionPanel(this);
         add(apptSelection);
         pack();

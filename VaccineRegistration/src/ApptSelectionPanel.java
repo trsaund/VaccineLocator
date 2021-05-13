@@ -29,6 +29,9 @@ public class ApptSelectionPanel extends JPanel{
         mainPanel.setLayout(new GridLayout(5,2));
 
 
+
+
+
         //Next Buttons
         JPanel bottomPanel = new JPanel();
         nextButton = new JButton("Next Step");
