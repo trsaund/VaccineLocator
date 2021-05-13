@@ -20,12 +20,6 @@ public class ApptScheduledPanel extends JPanel{
         add(title, BorderLayout.NORTH);
         setOpaque(false);
 
-        //Appointment Information
-        JPanel apptInfo = new JPanel();
-        apptInfo.setLayout(new BorderLayout());
-        apptInfo.setBorder(BorderFactory.createEmptyBorder(60,60,60,60));
-        //apptInfo.add(, BorderLayout.CENTER);
-
     }
 
 
