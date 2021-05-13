@@ -8,7 +8,7 @@ public class VaccineSite {
     private String siteAddress;
     private String siteCity;
     private String siteState;
-    private double siteZipCode;
+    private int siteZipCode;
     private int modernaCount;
     private int jandjCount;
     private int pfizerCount;
@@ -18,10 +18,10 @@ public class VaccineSite {
         siteAddress = line.next();
         siteCity = line.next();
         siteState = line.next();
-        siteZipCode = line.nextDouble();
+        siteZipCode = line.nextInt();
         modernaCount = line.nextInt();
         pfizerCount = line.nextInt();
-        jandjCount = line.nextInt();
+        //jandjCount = line.nextInt();
         /*This code will throw an error if text file with Site Info is formatted wrong, but we assume a file
         with any additional site info will be formatted correctly and input by programmers on the backend. */
 
@@ -36,7 +36,7 @@ public class VaccineSite {
         return fullSiteAddress;
     }
 
-    public double getSiteZipCode() {
+    public int getSiteZipCode() {
         return siteZipCode;
     }
 

@@ -108,7 +108,7 @@ public class RegistrationPanel extends JPanel{
                 //parse input from GUI
                 String patientFirstName = patientFirstNameField.getText();
                 String patientLastName = patientLastNameField.getText();
-                double patientZipCode = Double.parseDouble(patientZipCodeField.getText());
+                int patientZipCode = Integer.parseInt(patientZipCodeField.getText());
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
 

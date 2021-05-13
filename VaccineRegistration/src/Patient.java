@@ -3,13 +3,11 @@ import java.util.Date;
 
 public class Patient {
     private String patientFirstName, patientLastName, patientEmail, patientPhone;
-    private double patientZipCode;
+    private int patientZipCode, patientId = 1;
     private String vaccinePref;
     private String apptFullAddress;
-    private int patientId = 1;
 
-
-    public Patient(String patientFirstName, String patientLastName, double patientZipCode, String patientEmail, String patientPhone) {
+    public Patient(String patientFirstName, String patientLastName, int patientZipCode, String patientEmail, String patientPhone) {
         this.patientFirstName = patientFirstName;
         this.patientLastName = patientLastName;
         this.patientZipCode = patientZipCode;
