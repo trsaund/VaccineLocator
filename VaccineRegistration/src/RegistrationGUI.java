@@ -54,7 +54,7 @@ public class RegistrationGUI extends JFrame {
         add(allergyWarning);
         pack();
         setVisible(true);
-        setSize(800,800);
+        setSize(1500,500);
         repaint();
     }
 
@@ -64,7 +64,7 @@ public class RegistrationGUI extends JFrame {
         add(screeningPanel);
         pack();
         setVisible(true);
-        setSize(800,500);
+        setSize(1000,500);
         repaint();
     }
 
