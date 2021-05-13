@@ -96,6 +96,17 @@ public class RegistrationGUI extends JFrame {
     public static void main(String[] args) throws FileNotFoundException {
         CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCountySiteRoster.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
+        Scanner input = new Scanner(new File("JohnsonCountySiteRoster.txt"));
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
+            if (line.equals(""))
+            {
+                break; //moves execution down to next while loop (or whatever next chunk of code is)
+            }
+            Scanner scannerLine = new Scanner(line);
+            VaccineSite site = new VaccineSite(scannerLine);
+            System.out.println("Site Added");
+        }
         /*for(int i=0; i < johnsonCountySites.vaccineSites.size(); i++){
             System.out.println( johnsonCountySites.vaccineSites.get(i) );
         }*/

@@ -8,10 +8,10 @@ public class VaccineSite {
     private String siteAddress;
     private String siteCity;
     private String siteState;
-    private double siteZipCode;
-    private int modernaCount;
-    private int jandjCount;
-    private int pfizerCount;
+    private String siteZipCode;
+    private String modernaCount;
+    private String jandjCount;
+    private String pfizerCount;
 
     public VaccineSite(Scanner line) {
         line.useDelimiter(" | ");
@@ -19,10 +19,13 @@ public class VaccineSite {
         siteAddress = line.next();
         siteCity = line.next();
         siteState = line.next();
-        //siteZipCode = line.nextDouble();
+        siteZipCode = line.next();
+        System.out.println(line.next());
+        System.out.println(line.next());
+        System.out.println(line.next());
         //modernaCount = line.nextInt();
         //jandjCount = line.nextInt();
-       // pfizerCount = line.nextInt();
+        //pfizerCount = line.nextInt();
         /*This code will throw an error if text file with Site Info is formatted wrong, but we assume a file
         with any additional site info will be formatted correctly and input by programmers on the backend. */
 
@@ -37,10 +40,10 @@ public class VaccineSite {
         return fullSiteAddress;
     }
 
-    public double getSiteZipCode() {
+    public String getSiteZipCode() {
         return siteZipCode;
     }
-
+/*
     public int getModernaQuantity() {
         return modernaCount;
     }
@@ -64,5 +67,5 @@ public class VaccineSite {
 
     public void setJandjCount(int newCount) {
         jandjCount = Math.max(newCount, 0);
-    }
+    } */
 }
