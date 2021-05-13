@@ -114,9 +114,7 @@ public class RegistrationPanel extends JPanel{
 
                 //creates new Patient instance using input
                 Patient newPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
-
-                patientID += 1; // after patient file is created, increase patient counter for next input
-                frame.apptSelector();
+                frame.screening();
 
             }
 
