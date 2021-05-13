@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import java.util.Locale;
+
 
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
@@ -49,7 +51,7 @@ public class RegistrationPanel extends JPanel{
         mainPanel.add(patientZipCodeLabel);
         mainPanel.add(patientZipCodeField);
 
-        JLabel patientPhoneLabel = new JLabel("Phone Number (XXX-XXX-XXXX): ");
+        JLabel patientPhoneLabel = new JLabel("Phone Number (XXXXXXXXXX No dashes or parentheses): ");
         patientPhoneField = new JTextField(12);
         mainPanel.add(patientPhoneLabel);
         mainPanel.add(patientPhoneField);
@@ -130,9 +132,55 @@ public class RegistrationPanel extends JPanel{
         }
     }
 
+    private boolean validName(String name) {
+        name = name.toLowerCase();
+        char[] charArray = name.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char ch = charArray[i];
+            if (!(ch >= 'a' && ch <= 'z')) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean validEmail(String email) {
+        if (!email.contains(".com") | !email.contains("@")) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == nextButton){
+            if (event.getSource() == nextButton) {
+                if (!validEmail(patientEmailField.getText())) {
+                    int option = JOptionPane.showConfirmDialog(null, "Please Enter a Valid Email Address.");
+                }
+                if (!validName(patientFirstNameField.getText())) {
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid First Name.");
+                }
+                if (!validName(patientFirstNameField.getText())) {
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Last Name.");
+                }
+
+                //Handling Vaccine Preference Input Errors
+                //Series of if statements, so person can change their mind while on this panel and preference stored will update
+                if (event.getSource() == jandjButton) {
+                    currentPatient.setVaccinePref("Johnson & Johnson");
+                }
+                if (event.getSource() == modernaButton) {
+                    currentPatient.setVaccinePref("Moderna");
+                }
+                if (event.getSource() == pfizerButton) {
+                    currentPatient.setVaccinePref("Pfizer");
+                }
+
+                //If no errors in input, create new instance of patient class for the user.
+
                 //parse input from GUI
                 String patientFirstName = patientFirstNameField.getText();
                 String patientLastName = patientLastNameField.getText();
@@ -141,20 +189,16 @@ public class RegistrationPanel extends JPanel{
                 String patientPhone = patientPhoneField.getText();
 
                 //creates new Patient instance using input
-                Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
+                Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode,
+                        patientEmail, patientPhone);
+
+                //Move on to next panel
                 frame.apptSelector();
 
+
+
+
             }
-            if (event.getSource() == jandjButton) {
-                currentPatient.setVaccinePref("Johnson & Johnson");
-            }
-            else if (event.getSource() == modernaButton) {
-                currentPatient.setVaccinePref("Moderna");
-            }
-            else if (event.getSource() == pfizerButton) {
-                currentPatient.setVaccinePref("Pfizer");
-            }
-            //default setting for vaccine preference is already no preference, so do not need listener for this option
 
         }
     }
