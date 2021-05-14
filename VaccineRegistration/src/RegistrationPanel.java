@@ -152,7 +152,7 @@ public class RegistrationPanel extends JPanel{
 
     private boolean validPhone(String phone) {
         //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
-        if(phone.matches("[0-9]+") && phone.length() == 10){
+        if(phone.length() == 10){
             return true;
         }
         else {
