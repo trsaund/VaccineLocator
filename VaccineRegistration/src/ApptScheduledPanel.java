@@ -14,8 +14,7 @@ public class ApptScheduledPanel extends JPanel{
         this.frame = frame;
         setSize(1000, 1000);
         setLayout(new BorderLayout());
-        title = new JLabel("Your appt has been scheduled." +
-                "You will recieve a confirmation e-mail with the date and time of your appt.", SwingConstants.CENTER);
+        title = new JLabel("Your appointment has been scheduled. You may close out of all windows", SwingConstants.CENTER);
         title.setFont(new Font("Sans Serif", Font.BOLD, 30));
         title.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
         add(title, BorderLayout.NORTH);

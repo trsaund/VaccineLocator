@@ -95,6 +95,7 @@ public class ApptSelectionPanel extends JPanel {
                 String timepref = (String) timeChooser.getSelectedItem();
 
                 JOptionPane.showMessageDialog(null, "Your appointment has been scheduled! Please show up to this location " + location + " during the following walk in hours " + timepref);
+                frame.apptScheduled();
             }
 
         }

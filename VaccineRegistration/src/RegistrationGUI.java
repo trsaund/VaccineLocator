@@ -64,8 +64,8 @@ public class RegistrationGUI extends JFrame {
     }
     public void apptScheduled(){
         apptScheduled = new ApptScheduledPanel(this);
-        update(apptSelection, apptScheduled);
-        setSize(900,500);
+        update(apptSelection,apptScheduled);
+        setSize(800,800);
         repaint();
     }
 
