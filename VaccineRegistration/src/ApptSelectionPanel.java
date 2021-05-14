@@ -38,7 +38,8 @@ public class ApptSelectionPanel extends JPanel {
         mainPanel.setLayout(new GridLayout(5, 2));
         mainPanel.setBackground(Color.lightGray);
 
-        siteLabel = new JLabel("Select the nearest vaccine location");
+        siteLabel = new JLabel("Select your nearest vaccine location.");
+        siteLabel.setFont(new Font("Sans Serif", Font.BOLD, 15));
         siteChooser = new JComboBox();
         for(int i = 0; i < vaccineSites.size(); i++){
             siteChooser.addItem(vaccineSites.get(i));
@@ -46,8 +47,11 @@ public class ApptSelectionPanel extends JPanel {
         mainPanel.add(siteLabel);
         mainPanel.add(siteChooser);
 
-        String[] times = {"Morning, Afternoon, Evening"};
+        String times[] = {"8-11am", "12-2pm", "3-5pm"};
+        timeLabel = new JLabel("Select a time preference, this will be for walk-in hours.");
+        timeLabel.setFont(new Font("Sans Serif", Font.BOLD, 15));
         timeChooser = new JComboBox(times);
+        mainPanel.add(timeLabel);
         mainPanel.add(timeChooser);
         add(mainPanel);
 
@@ -83,12 +87,14 @@ public class ApptSelectionPanel extends JPanel {
         }
     }
 
-
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
             if (event.getSource() == nextButton){
-                frame.apptScheduled();
+                //frame.apptScheduled();
+                String location = (String) siteChooser.getSelectedItem();
+                String timepref = (String) timeChooser.getSelectedItem();
 
+                JOptionPane.showMessageDialog(null, "Your appointment has been scheduled! Please show up to this location " + location + " during the following walk in hours " + timepref);
             }
 
         }

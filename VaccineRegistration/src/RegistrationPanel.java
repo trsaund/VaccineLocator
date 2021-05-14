@@ -194,7 +194,7 @@ public class RegistrationPanel extends JPanel{
                 if (!validEmail(patientEmailField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid .com Email Address.");
                 }
-                if (!validZipCode(patientPhoneField.getText())) {
+                if (!validZipCode(patientZipCodeField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid Zip Code.");
                 }
 
