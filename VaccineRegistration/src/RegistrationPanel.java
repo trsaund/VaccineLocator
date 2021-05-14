@@ -152,7 +152,24 @@ public class RegistrationPanel extends JPanel{
 
     private boolean validPhone(String phone) {
         //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
-        if(phone.length() == 10){
+        double i = 0;
+        boolean isNumeric = true;
+        try {
+            Double num = Double.parseDouble(phone);
+        } catch (NumberFormatException e) {
+            isNumeric = false;
+        }
+        if(phone.length() == 5 & isNumeric){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private boolean validZipCode(String zip) {
+        //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
+        if(zip.length() == 5){
             return true;
         }
         else {
@@ -174,8 +191,8 @@ public class RegistrationPanel extends JPanel{
                 if (!validEmail(patientEmailField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid .com Email Address.");
                 }
-                if (!validPhone(patientPhoneField.getText())) {
-                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Phone Number.");
+                if (!validZipCode(patientPhoneField.getText())) {
+                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Zip Code.");
                 }
 
                 //Handling Vaccine Preference Input Errors
@@ -189,7 +206,7 @@ public class RegistrationPanel extends JPanel{
                 if (event.getSource() == pfizerButton) {
                     currentPatient.setVaccinePref("Pfizer");
                 }
-                //if no vaccine preference is entered, the default value of no preference will be used.
+                //if no vaccine preference is entered, the default value of no preference will be used. No need for error message.
 
                 //If no errors in input, create new instance of patient class for the user.
                 //parse input from GUI

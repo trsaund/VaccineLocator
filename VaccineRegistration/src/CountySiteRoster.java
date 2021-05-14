@@ -28,7 +28,7 @@ public class CountySiteRoster {
         }
     }
 
-    public ArrayList getByZipCode(double zipCode) throws FileNotFoundException {
+    public ArrayList getByZipCode(int zipCode) throws FileNotFoundException {
         ArrayList nearbySites = new ArrayList<VaccineSite>();
         for (int i = 0; i < vaccineSites.size(); i++) {
             VaccineSite site = vaccineSites.get(i);
