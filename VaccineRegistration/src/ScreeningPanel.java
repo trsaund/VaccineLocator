@@ -6,8 +6,10 @@ import java.text.SimpleDateFormat;
 
 public class ScreeningPanel extends JPanel {
     private RegistrationGUI frame;
-    private JLabel eligQuestion1, eligQuestion2, eligQuestion3, eligQuestion4, title;
-    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no, eligQuestion2_na, eligQuestion3_yes, eligQuestion3_no, eligQuestion4_yes, eligQuestion4_no;
+    private JLabel eligQuestion1, eligQuestion2, eligQuestion3, eligQuestion4, eligQuestion5, title;
+    private JRadioButton eligQuestion1_yes, eligQuestion1_no, eligQuestion2_yes, eligQuestion2_no,
+            eligQuestion2_na, eligQuestion3_yes, eligQuestion3_no, eligQuestion4_yes, eligQuestion4_no,
+            eligQuestion5_yes, eligQuestion5_no ;
     private JButton nextButton;
 
     public ScreeningPanel(RegistrationGUI frame) {
@@ -74,9 +76,41 @@ public class ScreeningPanel extends JPanel {
         question4.add(eligQuestion4_yes);
         question4.add(eligQuestion4_no);
         questions.add(question4);
+
+        //Question 4
+        JPanel question5 = new JPanel();
+        question5.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        eligQuestion5 = new JLabel("Are you a resident of Johnson County?");
+        eligQuestion5_yes = new JRadioButton("Yes");
+        eligQuestion5_yes.addActionListener(new ScreeningPanel.optionButtonListener());
+        eligQuestion5_no = new JRadioButton("No");
+        eligQuestion5_no.addActionListener(new ScreeningPanel.optionButtonListener());
+        question5.add(eligQuestion5);
+        question5.add(eligQuestion5_yes);
+        question5.add(eligQuestion5_no);
+        questions.add(question5);
         add(questions, BorderLayout.CENTER);
 
+        //Next Button
+        JPanel bottomPanel = new JPanel();
+        nextButton = new JButton("Next Step");
+        nextButton.addActionListener(new ScreeningPanel.nextButtonListener());
+        nextButton.setBackground(new Color(102,204,255));
+        bottomPanel.add(nextButton);
 
+        bottomPanel.setBorder(BorderFactory.createEmptyBorder(0,0,50,0));
+        add(bottomPanel, BorderLayout.SOUTH);
+
+    }
+
+    private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == nextButton){
+                frame.registration();
+
+            }
+
+        }
     }
 
     private class optionButtonListener implements ActionListener {
@@ -87,15 +121,20 @@ public class ScreeningPanel extends JPanel {
             if (event.getSource() == eligQuestion2_no){
                 frame.ineligibleMessage();
             }
+            if (event.getSource() == eligQuestion5_no){
+                frame.ineligibleMessage();
+            }
             if(event.getSource() == eligQuestion3_yes){
-                frame.allergyWarning();
+                JOptionPane.showMessageDialog(null, "If you are allergic to polyethylene glycol " +
+                        "(PEG) it is recommended that you receive the Johnson and Johnson vaccine.");
             }
             if(event.getSource() == eligQuestion4_yes){
-                frame.allergyWarning();
+                JOptionPane.showMessageDialog(null, "If you are allergic to polysorbate it is " +
+                        "recommended that you receive an mRNA vaccine (Pfizer or Moderna).");
             }
-            if(event.getSource() == eligQuestion4_no){
-                frame.registration();
-            }
+            //if(event.getSource() == eligQuestion4_no){
+            //    frame.registration();
+           // }
         }
     }
 }

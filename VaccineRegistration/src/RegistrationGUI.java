@@ -9,7 +9,6 @@ public class RegistrationGUI extends JFrame {
     private ScreeningPanel screeningPanel;
     private VaccineSelectionPanel vaccSelectPanel;
     private IneligiblePanel ineligiblePanel;
-    private AllergyWarningPanel allergyWarning;
     private ApptSelectionPanel apptSelection;
     private ApptScheduledPanel apptScheduled;
     private NoAvailabilityPanel noAvailAppts;
@@ -28,11 +27,6 @@ public class RegistrationGUI extends JFrame {
         setSize(900,600);
     }
 
-    public void removeAllergyWarning(){
-        remove(allergyWarning);
-        registration();
-    }
-
     public void vaccineSelect(){
         VaccineSelectionPanel vaccSelectPanel = new VaccineSelectionPanel(this);
         update(screeningPanel, vaccSelectPanel);
@@ -43,14 +37,7 @@ public class RegistrationGUI extends JFrame {
     public void ineligibleMessage(){
         ineligiblePanel = new IneligiblePanel(this);
         update(screeningPanel, ineligiblePanel);
-        setSize(1500,200);
-        repaint();
-    }
-
-    public void allergyWarning(){
-        allergyWarning = new AllergyWarningPanel(this);
-        update(screeningPanel, allergyWarning);
-        setSize(1500,500);
+        setSize(900,600);
         repaint();
     }
 
@@ -85,7 +72,7 @@ public class RegistrationGUI extends JFrame {
     public void FAQ() {
         JPanel theFAQ = new FAQ();
         update(regPanel, theFAQ);
-        setSize(1500,1000);
+        setSize(600,700);
         repaint();
     }
 
@@ -106,5 +93,7 @@ public class RegistrationGUI extends JFrame {
     public static void main(String[] args) throws FileNotFoundException {
         //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
+        String test = "8288288288";
+        System.out.println(test.length());
     }
 }
