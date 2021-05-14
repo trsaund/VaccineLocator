@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
 
 public class RegistrationPanel extends JPanel{
     private RegistrationGUI frame;
@@ -32,12 +35,12 @@ public class RegistrationPanel extends JPanel{
         JPanel mainPanel = new JPanel();
         mainPanel.setBorder(BorderFactory.createEmptyBorder(80,50,80,50));
         mainPanel.setLayout(new GridLayout(6,2));
-        JLabel patientFirstNameLabel = new JLabel("First Name (No hyphens): ");
+        JLabel patientFirstNameLabel = new JLabel("First Name: ");
         patientFirstNameField = new JTextField(50);
         mainPanel.add(patientFirstNameLabel);
         mainPanel.add(patientFirstNameField);
 
-        JLabel patientLastNameLabel = new JLabel("Last Name (No hyphens): ");
+        JLabel patientLastNameLabel = new JLabel("Last Name: ");
         patientLastNameField = new JTextField(50);
         mainPanel.add(patientLastNameLabel);
         mainPanel.add(patientLastNameField);
@@ -47,12 +50,12 @@ public class RegistrationPanel extends JPanel{
         mainPanel.add(patientZipCodeLabel);
         mainPanel.add(patientZipCodeField);
 
-        JLabel patientPhoneLabel = new JLabel("Phone Number e.g. 3198717711 (No dashes or parentheses): ");
+        JLabel patientPhoneLabel = new JLabel("Phone Number (XXX-XXX-XXXX): ");
         patientPhoneField = new JTextField(12);
         mainPanel.add(patientPhoneLabel);
         mainPanel.add(patientPhoneField);
 
-        JLabel patientEmailLabel = new JLabel("Email (Please use .com email address): ");
+        JLabel patientEmailLabel = new JLabel("Email: ");
         patientEmailField = new JTextField(10);
         mainPanel.add(patientEmailLabel);
         mainPanel.add(patientEmailField);
@@ -217,17 +220,32 @@ public class RegistrationPanel extends JPanel{
                 String patientPhone = patientPhoneField.getText();
 
                 //creates new Patient instance using input
-                Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode,
-                        patientEmail, patientPhone);
-
-                //Move on to next panel
-                frame.apptSelector();
-
+                Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
+                try {
+                    frame.apptSelector();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
             }
+            if (event.getSource() == jandjButton) {
+                currentPatient.setVaccinePref("Johnson & Johnson");
+            }
+            else if (event.getSource() == modernaButton) {
+                currentPatient.setVaccinePref("Moderna");
+            }
+            else if (event.getSource() == pfizerButton) {
+                currentPatient.setVaccinePref("Pfizer");
+            }
+            //default setting for vaccine preference is already no preference, so do not need listener for this option
 
         }
     }
+
+     /*private class jandjButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+        }
+    }*/
 
 }
 

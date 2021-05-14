@@ -72,7 +72,7 @@ public class VaccineSelectionPanel extends JPanel{
                 currentPatient.setVaccinePref("No Preference");
             }*/
 
-            frame.apptSelector();
+            //frame.apptSelector();
         }
     }
 
