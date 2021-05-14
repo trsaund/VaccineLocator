@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class RegistrationGUI extends JFrame {
     private RegistrationPanel regPanel;
@@ -13,6 +14,8 @@ public class RegistrationGUI extends JFrame {
     private ApptScheduledPanel apptScheduled;
     private NoAvailabilityPanel noAvailAppts;
     private Patient newPatient;
+    private CountySiteRoster site;
+
 
 
     public RegistrationGUI() {
@@ -65,9 +68,9 @@ public class RegistrationGUI extends JFrame {
         repaint();
     }
 
-    public void apptSelector(){
+    public void apptSelector() throws FileNotFoundException {
         apptSelection = new ApptSelectionPanel(this);
-        update(vaccSelectPanel, apptSelection);
+        update(regPanel, apptSelection);
         setSize(800,800);
         repaint();
 
@@ -101,7 +104,7 @@ public class RegistrationGUI extends JFrame {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty.txt");
+        //CountySiteRoster johnsonCountySites = new CountySiteRoster("JohnsonCounty.txt");
         RegistrationGUI registrationGUI = new RegistrationGUI();
     }
 }

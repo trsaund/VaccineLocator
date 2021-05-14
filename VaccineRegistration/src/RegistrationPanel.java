@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
@@ -142,7 +143,11 @@ public class RegistrationPanel extends JPanel{
 
                 //creates new Patient instance using input
                 Patient currentPatient = new Patient(patientFirstName, patientLastName, patientZipCode, patientEmail, patientPhone);
-                frame.apptSelector();
+                try {
+                    frame.apptSelector();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
             }
             if (event.getSource() == jandjButton) {
