@@ -153,7 +153,7 @@ public class RegistrationPanel extends JPanel{
 
     }
 
-    private boolean validPhone(String phone) {
+    /*private boolean validPhone(String phone) {
         //We will assume only U.S. based 10 digit phone numbers will be entered. No country codes.
         double i = 0;
         boolean isNumeric = true;
@@ -178,7 +178,7 @@ public class RegistrationPanel extends JPanel{
        else {
             return false;
         }
-    }
+    }*/
 
     private class nextButtonListener implements ActionListener { //make new instance of patient class using information entered in GUI
         public void actionPerformed(ActionEvent event) {
@@ -194,8 +194,8 @@ public class RegistrationPanel extends JPanel{
                 if (!validEmail(patientEmailField.getText())) {
                     JOptionPane.showMessageDialog(null, "Please Enter a Valid .com Email Address.");
                 }
-                if (!validZipCode(patientZipCodeField.getText())) {
-                    JOptionPane.showMessageDialog(null, "Please Enter a Valid Zip Code.");
+                //if (!validZipCode(patientZipCodeField.getText())) {
+                    //JOptionPane.showMessageDialog(null, "Please Enter a Valid Zip Code.");
                 }
 
                 //Handling Vaccine Preference Input Errors
@@ -215,7 +215,7 @@ public class RegistrationPanel extends JPanel{
                 //parse input from GUI
                 String patientFirstName = patientFirstNameField.getText();
                 String patientLastName = patientLastNameField.getText();
-                int patientZipCode = patientZipCodeField.getText();
+                String patientZipCode = patientZipCodeField.getText();
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
 
@@ -228,17 +228,6 @@ public class RegistrationPanel extends JPanel{
                 }
 
             }
-            if (event.getSource() == jandjButton) {
-                currentPatient.setVaccinePref("Johnson & Johnson");
-            }
-            else if (event.getSource() == modernaButton) {
-                currentPatient.setVaccinePref("Moderna");
-            }
-            else if (event.getSource() == pfizerButton) {
-                currentPatient.setVaccinePref("Pfizer");
-            }
-            //default setting for vaccine preference is already no preference, so do not need listener for this option
-
         }
     }
 
@@ -247,5 +236,5 @@ public class RegistrationPanel extends JPanel{
         }
     }*/
 
-}
+
 

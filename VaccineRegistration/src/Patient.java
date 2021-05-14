@@ -4,16 +4,15 @@ import java.util.Date;
 public class Patient {
     private String patientFirstName, patientLastName, patientEmail, patientPhone, patientVaccPref = "No Preference",
             apptFullAddress;
-    private int patientZipCode, patientId = 1;
+    private String patientZipCode;
 
-    public Patient(String patientFirstName, String patientLastName, int patientZipCode, String patientEmail, String patientPhone) {
+
+    public Patient(String patientFirstName, String patientLastName, String patientZipCode, String patientEmail, String patientPhone) {
         this.patientFirstName = patientFirstName;
         this.patientLastName = patientLastName;
         this.patientZipCode = patientZipCode;
         this.patientEmail = patientEmail;
         this.patientPhone = patientPhone;
-        patientId = patientId;
-        patientId += 1;
     }
 
     public void setupAppt(String apptFullAddress) {
