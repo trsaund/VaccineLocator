@@ -8,11 +8,14 @@ import java.util.Scanner;
 
 public class ApptSelectionPanel extends JPanel {
     private RegistrationGUI frame;
+    private JLabel siteLabel;
+    private JLabel timeLabel;
     private JButton nextButton;
     private JComboBox<String> siteChooser;
     private JButton submitButton;
     ArrayList<String> vaccineSites; //array list because we do not know how many products there will be
     ArrayList<Patient> patients;
+    private JComboBox<String> timeChooser;
 
     public ApptSelectionPanel(RegistrationGUI frame) throws FileNotFoundException {
         setFocusable(true);
@@ -35,11 +38,17 @@ public class ApptSelectionPanel extends JPanel {
         mainPanel.setLayout(new GridLayout(5, 2));
         mainPanel.setBackground(Color.lightGray);
 
+        siteLabel = new JLabel("Select the nearest vaccine location");
         siteChooser = new JComboBox();
         for(int i = 0; i < vaccineSites.size(); i++){
             siteChooser.addItem(vaccineSites.get(i));
         }
+        mainPanel.add(siteLabel);
         mainPanel.add(siteChooser);
+
+        String[] times = {"Morning, Afternoon, Evening"};
+        timeChooser = new JComboBox(times);
+        mainPanel.add(timeChooser);
         add(mainPanel);
 
 
