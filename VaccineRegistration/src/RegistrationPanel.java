@@ -175,7 +175,7 @@ public class RegistrationPanel extends JPanel{
         if(zip.length() == 5){
             return true;
         }
-        else {
+       else {
             return false;
         }
     }
@@ -215,7 +215,7 @@ public class RegistrationPanel extends JPanel{
                 //parse input from GUI
                 String patientFirstName = patientFirstNameField.getText();
                 String patientLastName = patientLastNameField.getText();
-                int patientZipCode = Integer.parseInt(patientZipCodeField.getText());
+                int patientZipCode = patientZipCodeField.getText();
                 String patientEmail = patientEmailField.getText();
                 String patientPhone = patientPhoneField.getText();
 
